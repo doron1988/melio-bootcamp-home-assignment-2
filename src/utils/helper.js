@@ -1,5 +1,13 @@
 export const getPersistentCandidatesData = () => {
-  // return the persistent data here
+  // Add your implementation of getting your saved candidates data
 }
 
-// add the rest of your logic here
+export const setPersistentCandidatesData = () => {
+  // Add your implementation of saving the candidates data
+}
+
+export const transformCandidatesData = () => {
+  // Add your implementation of transforming the fetched candidates data
+}
+
+// You can add more logic here if you need to :)

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./Home.css";
 import {fetchCandidates} from "../../utils/API.js";
 import {getPersistentCandidatesData} from "../../utils/helper.js";
+import {FavoriteIcon} from "../../components/FavoriteIcon/FavoriteIcon";
 
 /*
   This is a "React component", you don't really need to know react in dept,
