@@ -4,6 +4,7 @@ import {Navbar} from "./components/Navbar/Navbar.jsx";
 import {Home, routes} from "./pages";
 import "./App.css";
 
+
 /*
   This is the entry point of the application, the magic starts here
   The Navbar Component is responsible for the Top Menu links
@@ -11,7 +12,6 @@ import "./App.css";
 */
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <Navbar/>

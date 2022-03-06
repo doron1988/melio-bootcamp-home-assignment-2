@@ -8,9 +8,12 @@
   Once you are done, move your code to API.js and helper.js files
 * */
 
+import fetch from 'node-fetch';
+
 const FETCH_CANDIDATES_URL =
   "https://randomuser.me/api/?seed=abcd&nat=us,dk,fr,gb&results=50&page=1";
 const fetchCandidates = async () => {
+
 }
 
 (async function () {
@@ -21,7 +24,7 @@ const fetchCandidates = async () => {
 
   // An example of executing code from API.js file:
   const candidates = await fetchCandidates();
-  console.log("candidates data: ", candidates);
+  console.log("candidates data: ",candidates);
 
 })()
 

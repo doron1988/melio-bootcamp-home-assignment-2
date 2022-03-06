@@ -1,0 +1,73 @@
+.card {
+    background-color: white;
+    border-radius: 7px;
+    height: 97px;
+    width: 700px;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 0.5rem 1.5rem rgb(33 33 36 / 10%);
+    margin-bottom: 20px;
+}
+.firstLine{
+    padding-top: 20px;
+    font-size: 90%;
+    display: flex;
+}
+
+.secondLine{
+    display: flex;
+    font-size: 80%;
+}
+
+.thirdLine{
+    padding-bottom: 20px;
+    font-size: 80%;
+    display: flex;
+}
+
+.name{
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.preferred{
+    margin-left: 10px;
+    margin-top: 4px;
+    padding: 0px 5px 0px 5px;
+    height: 15px;
+    color: white;
+    background-color: darkblue;
+    font-size: 60%;
+    bottom: 0;
+    border-radius: 20px;
+}
+.email{
+    color: #808080;
+}
+.cityAndCountry{
+    padding-right: 5px;
+    color: #808080;
+}
+.candidatePicture{
+    border-radius: 50%;
+    float: left;
+    margin: 15px 15px 15px 20px;
+    width: 67px;
+    height: 67px;
+}
+.favoriteIcon{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+.favoriteIcon .noFavorite{
+    display: none;
+}
+
+.card:hover .favoriteIcon .noFavorite{
+    display: inline-block;
+
+}
+.card:hover{
+    box-shadow: 0 0.8rem 1.5rem 0 rgb(33 33 36 / 20%);
+}
