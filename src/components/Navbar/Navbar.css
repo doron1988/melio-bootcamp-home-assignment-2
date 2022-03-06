@@ -1,3 +1,22 @@
 #navbar {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #dcdcdc;
+  display: flex;
+  background-color: white;
+}
+
+.homeNav{
+  padding: 20px;
+  cursor: pointer;
+}
+.favoriteNav{
+  padding: 20px 0 20px 5px;
+  cursor: pointer;
+}
+
+.homeNav:hover{
+  color: #b54ef1;
+}
+
+.favoriteNav:hover{
+  color: #b54ef1;
 }

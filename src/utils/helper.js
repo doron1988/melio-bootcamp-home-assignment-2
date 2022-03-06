@@ -1,18 +1,13 @@
-import {fetchCandidates} from "./API";
-
 export const getPersistentCandidatesData = () => {
-  // Add your implementation of getting your saved candidates data
     let jsonNormalizedCandidatesList = JSON.parse(localStorage.getItem("normalizedCandidatesList"))
     return convertCandidatesDataFromJsonToArray(jsonNormalizedCandidatesList);
 }
 
 export const setPersistentCandidatesData = (normalizedCandidatesList) => {
-  // Add your implementation of saving the candidates data
     localStorage.setItem("normalizedCandidatesList",JSON.stringify(normalizedCandidatesList));
 }
 
 export const transformCandidatesData = (fetchData) => {
-    // Add your implementation of transforming the fetched candidates data
     let normalizedCandidatesList = {};
     let candidatesList = fetchData;
     for(let candidateIndex = 0 ; candidateIndex < candidatesList.length ; candidateIndex++){
@@ -51,7 +46,6 @@ export const transformCandidatesData = (fetchData) => {
     return convertCandidatesDataFromJsonToArray(normalizedCandidatesList);
 }
 
-// You can add more logic here if you need to :)
 function isPreferred(countryCode){
     if (countryCode == "US" || countryCode == "GB"){
         return true;
@@ -66,11 +60,27 @@ function keyExistInObject (firstLetter, object){
 }
 
 function convertCandidatesDataFromJsonToArray(jsonNormalizedCandidatesList){
-    let arrayNormalizedCandidatesList= []
+    let arrayNormalizedCandidatesList= [];
     for (const key in jsonNormalizedCandidatesList){
         for(const candidate of jsonNormalizedCandidatesList[key]){
             arrayNormalizedCandidatesList.push(candidate);
         }
     }
     return arrayNormalizedCandidatesList;
+}
+
+export const convertCandidatesDataFromArrayToJson = (arrayNormalizedCandidatesList) => {
+    let jsonNormalizedCandidatesList= {};
+    for (let candidateIndex = 0 ; candidateIndex < arrayNormalizedCandidatesList.length ; candidateIndex++){
+        let firstLetterFirstName = arrayNormalizedCandidatesList[candidateIndex]["firstName"].charAt(0);
+
+        if (keyExistInObject(firstLetterFirstName,jsonNormalizedCandidatesList)){
+            let candidate = arrayNormalizedCandidatesList[candidateIndex];
+            jsonNormalizedCandidatesList[firstLetterFirstName].push(candidate);
+        }
+        else {
+            jsonNormalizedCandidatesList[firstLetterFirstName] = [arrayNormalizedCandidatesList[candidateIndex]];
+        }
+    }
+    return jsonNormalizedCandidatesList;
 }
