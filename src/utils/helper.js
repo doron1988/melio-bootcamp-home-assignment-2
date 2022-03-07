@@ -11,17 +11,16 @@ export const transformCandidatesData = (fetchData) => {
     let normalizedCandidatesList = {};
     let candidatesList = fetchData;
     for(let candidateIndex = 0 ; candidateIndex < candidatesList.length ; candidateIndex++){
-
-        let candidateFirstName = candidatesList[candidateIndex]["name"]["first"];
-        let candidateLastName = candidatesList[candidateIndex]["name"]["last"];
-        let candidateEmail = candidatesList[candidateIndex]["email"];
-        let candidateCity = candidatesList[candidateIndex]["location"]["city"];
-        let candidateCountry = candidatesList[candidateIndex]["location"]["country"];
-        let candidatePicture = candidatesList[candidateIndex]["picture"]["medium"];
-        let candidateUuid = candidatesList[candidateIndex]["login"]["uuid"];
-        let candidateCountryCode = candidatesList[candidateIndex]["nat"];
+        let candidateData = candidatesList[candidateIndex];
+        let candidateFirstName = candidateData.name.first;
+        let candidateLastName = candidateData.name.last;
+        let candidateEmail = candidateData.email;
+        let candidateCity = candidateData.location.city;
+        let candidateCountry = candidateData.location.country;
+        let candidatePicture = candidateData.picture.medium;
+        let candidateUuid = candidateData.login.uuid;
+        let candidateCountryCode = candidateData.nat;
         let candidateIsPreferred = isPreferred(candidateCountryCode);
-
         let candidate = {
             firstName: candidateFirstName,
             lastName: candidateLastName,
@@ -33,7 +32,6 @@ export const transformCandidatesData = (fetchData) => {
             isFavorite: false,
             isPreferred: candidateIsPreferred
         }
-
         let firstLetterName = candidateFirstName.charAt(0);
         if (keyExistInObject(firstLetterName, normalizedCandidatesList)){
             normalizedCandidatesList[firstLetterName].push(candidate);
@@ -73,7 +71,6 @@ export const convertCandidatesDataFromArrayToJson = (arrayNormalizedCandidatesLi
     let jsonNormalizedCandidatesList= {};
     for (let candidateIndex = 0 ; candidateIndex < arrayNormalizedCandidatesList.length ; candidateIndex++){
         let firstLetterFirstName = arrayNormalizedCandidatesList[candidateIndex]["firstName"].charAt(0);
-
         if (keyExistInObject(firstLetterFirstName,jsonNormalizedCandidatesList)){
             let candidate = arrayNormalizedCandidatesList[candidateIndex];
             jsonNormalizedCandidatesList[firstLetterFirstName].push(candidate);

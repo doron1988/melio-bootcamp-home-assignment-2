@@ -8,7 +8,6 @@ export const Navbar = () => {
     <div id="navbar">
         <div className="homeNav"><NavbarLink label="Home" to={routes.home} /></div>
         <div className="favoriteNav"><NavbarLink label="Favorite" to={routes.favorite} /></div>
-
     </div>
   );
 };

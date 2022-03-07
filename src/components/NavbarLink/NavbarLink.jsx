@@ -5,7 +5,7 @@ import "./NavbarLink.css";
 export const NavbarLink = (props) => {
   const navigate = useNavigate();
   const {pathname} = useLocation();
-  const isActive = pathname === props.to; // use this property to highlight the active navLink
+  const isActive = pathname === props.to;
 
   const handleClick = () => {
     navigate(props.to);
@@ -13,7 +13,7 @@ export const NavbarLink = (props) => {
 
   return (
     <div onClick={handleClick}>
-      {props.label}
+      {isActive ? <div className="lable">{props.label} </div> : <div>{props.label}</div>}
     </div>
   );
 };
