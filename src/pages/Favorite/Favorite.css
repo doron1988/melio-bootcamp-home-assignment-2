@@ -1,22 +1,43 @@
 #favorite {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80vw;
 }
 
 .favorite-title {
-    display: flex;
+    margin-left: 20px;
     font-size: 34px;
     font-weight: 700;
     margin-block-start: 50px;
 }
 
 .favorite-subtitle {
-    display: flex;
+    color: #6e6e6e;
     font-size: 14px;
+    margin-left: 20px;
 }
 
-.candidates-list{
+.favorite-candidates-list{
     margin-block-start: 30px;
+    overflow-x: scroll;
+    width: auto;
+    height: 1000px;
+}
+
+@media only screen and (max-width: 1170px) {
+    #favorite {
+        font-size: smaller;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100vw;
+    }
+
+    .favorite-title{
+        font-size: 30px;
+        text-align: center;
+    }
+    .favorite-subtitle{
+        text-align: center;
+    }
 }

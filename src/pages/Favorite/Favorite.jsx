@@ -21,10 +21,9 @@ export const Favorite = () => {
         <div id="favorite">
             <div className="favorite-title">Favorite candidates</div>
             <div className="favorite-subtitle">Doron Avramov</div>
-            <div className="candidates-list">
+            <div className="favorite-candidates-list">
                 {candidates.map((candidate) => (
                     <Card key={candidate.email} firstName={candidate.firstName} lastName={candidate.lastName} email={candidate.email} city={candidate.city} country={candidate.country} picture={candidate.picture} isFavorite={candidate.isFavorite} isPreferred={candidate.isPreferred}/>))}
-
             </div>
         </div>
     );
