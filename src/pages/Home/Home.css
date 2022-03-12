@@ -14,7 +14,6 @@
 
 .home-subtitle {
   font-size: 14px;
-  padding-right: 50px;
   color: #6e6e6e;
   margin-left: 20px;
 }
@@ -38,10 +37,13 @@
 .home-title{
   font-size: 30px;
   text-align: center;
+  width: calc(100% - 60px);
 }
 .home-subtitle{
   text-align: center;
+  width: calc(100% - 60px);
 }
+
 }
 
 

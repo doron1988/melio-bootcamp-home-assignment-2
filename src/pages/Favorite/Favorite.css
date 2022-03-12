@@ -36,8 +36,10 @@
     .favorite-title{
         font-size: 30px;
         text-align: center;
+        width: calc(100% - 60px);
     }
     .favorite-subtitle{
         text-align: center;
+        width: calc(100% - 60px);
     }
 }
